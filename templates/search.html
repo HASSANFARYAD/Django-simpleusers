@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Search
+{% endblock title %}
+
+{% block content %}
+
+    <!-- Main Section -->
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Welcome!</h1>
+        <p class="lead">Here are your Search Result<br> {{search.upper}} </p>
+    </div>
+    <div class="container main-part">
+      <!-- Card for details -->
+      {% if contacts %}
+      {% for contact in contacts %}
+
+      {% include "partials/_card.html" %}
+
+      {% endfor %}
+      {% else %}
+      <h2>Search Result Not Found</h2>
+      {% endif %}
+    </div> 
+    <!-- Main Section ends-->
+    
+
+
+{% endblock content %}
